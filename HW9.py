@@ -28,8 +28,6 @@ def phone(m):
     a = input()
     print(users[a])
 
-
-
 @input_error
 def show_all(m):
     for key, value in users.items():
@@ -43,13 +41,11 @@ def help(m):
 def exit(m):
     return quit()   
 
-
 commands = {'add':(add,'Enter user name and phone-number: ','Give me name and phone please'),
 'good bye':(exit,'Good bye!',''),'close':(exit,'Good bye!',''),'exit':(exit,'Good bye!',''),
 'hello':(help,'How can I help you?',''),'show all':(show_all,'Users list:',''),
 'change':(change,'Enter user name and phone-number: ','Give me name and phone please'),
 'phone':(phone,'Enter user name: ','Give me name'),}
-
 
 def main():
     global users
@@ -61,7 +57,6 @@ def main():
             if input_string.find(el) != -1:
                 print(commands[el][1])
                 commands[el][0](commands[el][2])
-
 
 
 if __name__ == '__main__':
