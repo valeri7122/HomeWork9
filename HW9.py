@@ -2,7 +2,7 @@ users = {}
 
 def input_error(func):
     def wrapper(m, a):
-        while Exception or not a == 'e':
+        while Exception:
             try:
                 func(m)     
             except Exception: 
