@@ -46,7 +46,7 @@ def exit(m):
 
 commands = {'add':(add,'Enter user name and phone-number: ','Give me name and phone please'),
 'good bye':(exit,'Good bye!',''),'close':(exit,'Good bye!',''),'exit':(exit,'Good bye!',''),
-'help':(help,'How can I help you?',''),'show all':(show_all,'Users list:',''),
+'hello':(help,'How can I help you?',''),'show all':(show_all,'Users list:',''),
 'change':(change,'Enter user name and phone-number: ','Give me name and phone please'),
 'phone':(phone,'Enter user name: ','Give me name'),}
 
