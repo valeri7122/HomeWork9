@@ -1,7 +1,7 @@
 users = {}
 
 def input_error(func):
-    def wrapper(m, a):
+    def wrapper(m):
         while Exception:
             try:
                 func(m)     
