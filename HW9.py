@@ -48,7 +48,6 @@ commands = {'add':(add,'Enter user name and phone-number: ','Give me name and ph
 'phone':(phone,'Enter user name: ','Give me name'),}
 
 def main():
-    global users
     while True:
         input_string = input('Enter command: ' )
         input_string = input_string.lower()
