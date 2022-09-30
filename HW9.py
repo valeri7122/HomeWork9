@@ -2,11 +2,10 @@ users = {}
 
 def input_error(func):
     def wrapper(*args, **kwargs):
-        while True:
-            try:
-                return func(*args, **kwargs)     
-            except Exception: 
-                print('Wrong enter. Repite please.')
+           try:
+               return func(*args, **kwargs)     
+           except Exception: 
+               print('Wrong enter. Repite please.')
     return wrapper
 
 @input_error
