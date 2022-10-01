@@ -15,32 +15,31 @@ def input_error(func):
 
 @input_error
 def add(func_arg):
-    a = func_arg.split(' ')
-    return users.update({a[0]: a[1]})
+    users[func_arg[0]] = func_arg[1]
+    return 'A new contact has been added'
 
 @input_error
 def change(func_arg):
-    a = func_arg.split(' ')
-    return users.update({a[0]: a[1]})
+    users[func_arg[0]] = func_arg[1]
+    return 'The contact has been changed'
 
 @input_error
 def phone(func_arg):
-    p = users[func_arg]
-    print(p)
+    return users[func_arg[0]]
 
 @input_error
-def show_all():
+def show_all(_=None):
     print('Users list:')
-    for key, value in users.items():
-        print(f'{key}:{value}')  
+    return users 
 
 @input_error
-def hello():
+def hello(_=None):
     return 'How can I help you?'
     
 @input_error
-def exit():
+def exit(_=None):
     return 'Good bye!'  
+
 
 commands = {
 'add':add,
@@ -55,17 +54,24 @@ commands = {
 
 def main():
     while True:
-        input_string = input('Enter command: ').strip().lower()
-        if input_string == 'add' or input_string == 'change':
-            commands[input_string](input('Enter user name and phone-number: ').strip().lower())
-        elif input_string == "phone":
-            commands[input_string](input('Enter user name: ').strip().lower())
-        elif input_string == "hello":
-            print(commands[input_string]())
-        elif commands[input_string]() == "Good bye!":
-            print(commands[input_string]())
-            break    
+
+        print('Enter command:')
+        
+        input_string = input().lower()
 
 
+        if input_string.split()[0] in commands and len(input_string.split()) > 1:
+
+            print(commands[input_string.split()[0]](input_string.split()[1:]))
+            
+        elif input_string in commands:
+            
+            print(commands[input_string](input_string))
+            
+            if commands[input_string](input_string) == "Good bye!":
+                break
+
+
+ 
 if __name__ == '__main__':
     main() 
